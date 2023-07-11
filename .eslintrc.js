@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 module.exports = {
   extends: "erb",
   rules: {
@@ -11,7 +12,15 @@ module.exports = {
     "no-use-before-define": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/click-events-have-key-events": "off",
-    "prettier/prettier": ["error", { singleQuote: false, trailingComma: "none", printWidth: 100 }]
+    "prettier/prettier": [
+      "warn",
+      {
+        singleQuote: false,
+        trailingComma: "none",
+        printWidth: 100,
+        plugins: [require("prettier-plugin-tailwindcss")]
+      }
+    ]
   },
   parserOptions: {
     ecmaVersion: 2020,
