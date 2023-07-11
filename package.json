@@ -1,6 +1,6 @@
 {
-  "name": "fs-hub",
-  "description": "flight simulator",
+  "name": "boilerplate",
+  "description": "react electron boilerplate",
   "keywords": [
     "electron",
     "boilerplate",
