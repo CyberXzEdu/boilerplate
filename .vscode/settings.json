@@ -28,6 +28,8 @@
     "*.{css,sass,scss}.d.ts": true
   },
 
+  "css.customData": [".vscode/tailwind.json"],
+
   "git.enabled": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
