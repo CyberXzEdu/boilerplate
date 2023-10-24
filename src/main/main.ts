@@ -60,6 +60,7 @@ const createWindow = async () => {
     icon: getAssetPath("icon.ico"),
     autoHideMenuBar: true,
     webPreferences: {
+      devTools: !app.isPackaged,
       preload: app.isPackaged
         ? path.join(__dirname, "preload.js")
         : path.join(__dirname, "../../.erb/dll/preload.js")
