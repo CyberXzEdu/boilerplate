@@ -82,6 +82,12 @@ const configuration: webpack.Configuration = {
           "file-loader",
         ],
       },
+
+      {
+        test: /\.css$/,
+        include: [webpackPaths.srcRendererPath],
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
     ],
   },
 
