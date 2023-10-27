@@ -1,34 +1,36 @@
-/* eslint-disable global-require */
+/** @type {import("prettier").Config} */
+const prettierConfig = {
+  printWidth: 120,
+  endOfLine: "lf",
+  singleQuote: false,
+  trailingComma: "none",
+  plugins: ["prettier-plugin-tailwindcss"]
+};
+
 module.exports = {
-  extends: "erb",
-  rules: {
-    // A temporary hack related to IDE not resolving correct package.json
-    "import/no-extraneous-dependencies": "off",
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": "off",
-    "import/extensions": "off",
-    "import/no-unresolved": "off",
-    "import/no-import-module-exports": "off",
-    "no-use-before-define": "off",
-    "jsx-a11y/no-static-element-interactions": "off",
-    "jsx-a11y/click-events-have-key-events": "off",
-    "no-unused-vars": "warn",
-    "prettier/prettier": [
-      "warn",
-      {
-        singleQuote: false,
-        trailingComma: "none",
-        printWidth: 100,
-        plugins: [require("prettier-plugin-tailwindcss")]
-      }
-    ]
+  env: {
+    browser: true,
+    es2021: true,
+    node: true
   },
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  overrides: [],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: "module",
-    project: "./tsconfig.json",
-    tsconfigRootDir: __dirname,
-    createDefaultProgram: true
+    ecmaVersion: "latest",
+    sourceType: "module"
+  },
+  plugins: ["react", "@typescript-eslint"],
+  rules: {
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-var-requires": "off",
+    "prettier/prettier": ["warn", prettierConfig]
   },
   settings: {
     "import/resolver": {

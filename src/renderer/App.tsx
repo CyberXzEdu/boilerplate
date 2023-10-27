@@ -1,5 +1,5 @@
 import "./global.css";
 
 export default function App() {
-  return <h1 className="text-3xl text-center mt-20 animate-bounce">Hello World!</h1>;
+  return <h1 className="mt-20 animate-bounce text-center text-3xl">Hello World!</h1>;
 }

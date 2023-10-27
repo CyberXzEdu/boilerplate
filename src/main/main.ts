@@ -1,4 +1,4 @@
-/* eslint global-require: off, no-console: off, promise/always-return: off */
+/* eslint global-require: off, no-console: off */
 
 import path from "path";
 import { app, BrowserWindow, shell } from "electron";
@@ -61,9 +61,7 @@ const createWindow = async () => {
     autoHideMenuBar: true,
     webPreferences: {
       devTools: !app.isPackaged,
-      preload: app.isPackaged
-        ? path.join(__dirname, "preload.js")
-        : path.join(__dirname, "../../.erb/dll/preload.js")
+      preload: app.isPackaged ? path.join(__dirname, "preload.js") : path.join(__dirname, "../../.erb/dll/preload.js")
     }
   });
 
