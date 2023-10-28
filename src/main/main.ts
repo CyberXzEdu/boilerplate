@@ -57,6 +57,7 @@ const createWindow = async () => {
     width: 1024,
     height: 725,
     resizable: false,
+    title: "Boilerplate",
     icon: getAssetPath("icon.ico"),
     autoHideMenuBar: true,
     webPreferences: {
